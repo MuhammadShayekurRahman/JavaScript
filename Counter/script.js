@@ -9,7 +9,7 @@ const addedTen = () => {
     countOutput.value = parseInt(countOutput.value) + 10;
     const countLog = document.createElement("p");
     countLog.innerText = clickCount + " : Added 10 : " + countOutput.value;
-    countHistory.appendChild(countLog);
+    countHistory.prepend(countLog);
 }
 
 const addedFive = () => {
@@ -17,7 +17,7 @@ const addedFive = () => {
     countOutput.value = parseInt(countOutput.value) + 5;
     const countLog = document.createElement("p");
     countLog.innerText = clickCount + " : Added 5 : "+ countOutput.value;
-    countHistory.appendChild(countLog);
+    countHistory.prepend(countLog);
 }
 
 const minusFive = () => {
@@ -25,7 +25,7 @@ const minusFive = () => {
     countOutput.value = parseInt(countOutput.value) - 5;
     const countLog = document.createElement("p");
     countLog.innerText = clickCount + " : Subtracted 5 : " + countOutput.value;
-    countHistory.appendChild(countLog);
+    countHistory.prepend(countLog);
 }
 
 const minusTen = () => {
@@ -33,7 +33,7 @@ const minusTen = () => {
     countOutput.value = parseInt(countOutput.value) - 10;
     const countLog = document.createElement("p");
     countLog.innerText = clickCount + " : Subtracted 10 : "+ countOutput.value;
-    countHistory.appendChild(countLog);
+    countHistory.prepend(countLog);
 }
 
 const reset = () => {
@@ -41,5 +41,5 @@ const reset = () => {
     countOutput.value = 0;
     const countLog = document.createElement("p");
     countLog.innerText = clickCount + " : Cleared";
-    countHistory.appendChild(countLog);
+    countHistory.prepend(countLog);
 }
