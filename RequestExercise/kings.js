@@ -2,6 +2,7 @@
 
     const outputDiv = document.querySelector("div#output");
     const search = document.querySelector("input#searchKing");
+    const searchHouse = document.querySelector("input#searchHouse");
     
         const findKing = () => {
 
@@ -21,6 +22,29 @@
                     }
                 }
                 document.write("fail")
+            })
+            .catch(error => console.error(error))
+        }
+
+        const findHouse = () => {
+
+            console.log("SEARCH: ", searchHouse.value);
+            axios.get( "https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/kings.json")
+            .then(response =>{
+                console.log(response);
+
+               
+                for(let i=0; i<response.data.length; i++){
+                    if(searchHouse.value === response.data[i].hse){
+                        //document.write(response.data[i].nm)
+                        const king = document.createElement("p")
+                        king.innerText = "Name = [" +response.data[i].nm +"] Country = [" + response.data[i].cty+"] House = [" + response.data[i].hse+"] Reign = [" + response.data[i].yrs + "]";
+                        outputDiv.appendChild(king);
+                        //return;
+                    }
+
+                }
+               // document.write("fail")
             })
             .catch(error => console.error(error))
         }
