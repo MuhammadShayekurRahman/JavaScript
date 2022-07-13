@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Car</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+    
+    <form>
+        <label for="make">Make</label>
+        <input name="make" id="carMake">
+        <br>
+        <label for="model">model</label>
+        <input name="model" id="carModel">
+        <br>
+        <label for="type">type</label>
+        <input name="type" id="carType">
+        <br>
+        <label for="Electric">Select Engine Type</label>
+        <br>
+        <input type="radio" name="electric" value=True required/> Electric
+        <input type="radio" name="electric" value=False required/> Petrol / Diesel
+        <br>
+        <button type="submit">Create</button>
+    </form>
+
+    <div id="output">
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

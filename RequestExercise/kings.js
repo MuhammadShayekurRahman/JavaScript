@@ -13,7 +13,7 @@
 
                
                 for(let i=0; i<response.data.length; i++){
-                    if(search.value === response.data[i].nm){
+                    if(search.value.toLowerCase() === response.data[i].nm.toLowerCase()){
                         //document.write(response.data[i].nm)
                         const king = document.createElement("p")
                         king.innerText = "Name = [" +response.data[i].nm +"] Country = [" + response.data[i].cty+"] House = [" + response.data[i].hse+"] Reign = [" + response.data[i].yrs + "]";
@@ -35,13 +35,17 @@
 
                
                 for(let i=0; i<response.data.length; i++){
-                    if(searchHouse.value === response.data[i].hse){
+                    
+                    
+                    if(searchHouse.value.toLowerCase() === response.data[i].hse.toLowerCase()){
                         //document.write(response.data[i].nm)
                         const king = document.createElement("p")
                         king.innerText = "Name = [" +response.data[i].nm +"] Country = [" + response.data[i].cty+"] House = [" + response.data[i].hse+"] Reign = [" + response.data[i].yrs + "]";
                         outputDiv.appendChild(king);
                         //return;
                     }
+
+                    
 
                 }
                // document.write("fail")
