@@ -44,6 +44,15 @@ function renderCars(){
                     deleteCar(car.id);
                 })
                 output.appendChild(carDelete);
+
+                const carUpdate = document.createElement("button");
+                carUpdate.innerText = "Update Car";
+                carUpdate.addEventListener("click", () =>{
+
+                    updateCar();
+
+                })
+                output.appendChild(carUpdate);
             }
 
         })
@@ -59,6 +68,39 @@ const deleteCar = (id) =>{
 
         })
         .catch(error => console.error(error))
+}
+
+function updateCar () {
+
+    output.innerHTML = "";
+
+    const updateDiv = document.createElement("div");
+    const updateMake = document.createElement("input");
+    updateMake.placeholder = "Make";
+    const updateModel = document.createElement("input");
+    updateModel.placeholder = "Model";
+    const updateType = document.createElement("input");
+    updateType.placeholder = "Type";
+    const updateElectric = document.createElement("input");
+    updateElectric.innerText = "Change engine type";
+    updateElectric.type = "radio";
+    const submitUpdate = document.createElement("button");
+    submitUpdate.type = "button";
+    submitUpdate.innerText = "Submit Update"
+
+    output.appendChild(updateDiv);
+    updateDiv.appendChild(updateMake);
+    updateDiv.appendChild(updateModel);
+    updateDiv.appendChild(updateType);
+    updateDiv.appendChild(updateElectric);
+    updateDiv.appendChild(submitUpdate);
+
+    submitUpdate.addEventListener("click", () =>{
+
+        renderCars();
+
+    })
+
 }
 
 renderCars();
